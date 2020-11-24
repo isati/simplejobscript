@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<post><type type="string">simple</type><title type="string">New job board has been launched</title><content type="string">&lt;p&gt;We are happy to announce that a fresh new website is ready to jump start its journey.&lt;/p&gt;&#13;
+&lt;p&gt;&lt;img src="/blog/content/public/upload/blog-post-img1_0_o.jpg" alt="undefined" /&gt;&lt;/p&gt;&#13;
+&lt;p&gt;Nam metus quam, auctor eget ultrices vitae, ultricies ut leo. Nulla dignissim iaculis ante, sit amet dictum orci euismod id. Aliquam suscipit lacus quis orci tempor fermentum. Mauris efficitur, libero ac tincidunt rutrum, elit lorem tincidunt leo, a varius eros arcu vitae sapien. In luctus convallis est sit amet congue. Quisque auctor sapien a arcu iaculis, et bibendum odio vestibulum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed at consequat nisi. Sed non sollicitudin orci. Suspendisse sit amet tellus at ligula posuere lobortis. Vivamus a dolor id felis posuere feugiat sit amet at sapien. Nam eget nibh nisl. Fusce in tortor enim. Nulla viverra, felis vehicula rutrum vehicula, sapien elit porta quam, sed consequat ligula libero quis mauris.&lt;/p&gt;&#13;
+&lt;pre&gt;&lt;code data-language="php"&gt;&amp;lt;?xml version="1.0"?&amp;gt; &#13;
+&amp;lt;html&amp;gt; &#13;
+  &amp;lt;title&amp;gt;PHP Example&amp;lt;/title&amp;gt; &#13;
+  &amp;lt;body&amp;gt; &#13;
+   &amp;lt;p&amp;gt;...all sorts goes here...&amp;lt;/p&amp;gt; &#13;
+  &amp;lt;/body&amp;gt; &#13;
+&amp;lt;/html&amp;gt; &lt;/code&gt;&lt;/pre&gt;</content><description type="string"></description><allow_comments type="integer">1</allow_comments><pub_date type="integer">1457388793</pub_date><mod_date type="string">0</mod_date><visits type="string">0</visits></post>
