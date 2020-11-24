@@ -13,3 +13,5 @@
 /src/_config/config.envs.php
 /src/_tools/maintenance.log
 /src/_tools/import/
+
+.idea/
