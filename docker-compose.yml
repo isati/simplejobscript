@@ -15,6 +15,7 @@ services:
       - "443:443"
     volumes:
       - ./build/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./src:/var/www/html
     networks:
       - app-network
     depends_on:
