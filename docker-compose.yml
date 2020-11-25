@@ -1,31 +1,12 @@
 version: '3'
 services:
 
-  #PHP Service
-  app:
+  #Apache Service
+  webserver:
+    image: httpd
     build:
       context: .
-      dockerfile: ./build/docker/php/Dockerfile
-    image: php
-    container_name: app
-    restart: unless-stopped
-    tty: true
-    environment:
-      SERVICE_NAME: app
-      SERVICE_TAGS: dev
-    working_dir: /var/www
-    volumes:
-      - ./:/var/www
-    networks:
-      - app-network
-    links:
-      - db
-    depends_on:
-      - db
-
-  #Nginx Service
-  webserver:
-    image: nginx:alpine
+      dockerfile: ./build/Dockerfile
     container_name: webserver
     restart: unless-stopped
     tty: true
@@ -33,14 +14,10 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./:/var/www
-      - ./build/docker/nginx/:/etc/nginx/conf.d/
+      - ./build/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
     networks:
       - app-network
-    links:
-      - app
     depends_on:
-      - app
       - db
 
   #MySQL Service
@@ -58,8 +35,8 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql/
-      - ./build/docker/mysql/my.cnf:/etc/mysql/my.cnf
-      - ./build/docker/mysql/:/docker-entrypoint-initdb.d
+      - ./build/my.cnf:/etc/mysql/my.cnf
+      - ./build/mysql/:/docker-entrypoint-initdb.d
     networks:
       - app-network
 
