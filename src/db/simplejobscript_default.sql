@@ -13,7 +13,7 @@
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(16) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -21,7 +21,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, 'admin', '$2y$10$Q95IagO0YEm3GwGlNFyHE.B3kcIXRx7BwlG8.inlb8AYsI.RdgF7W');
 
 -- --------------------------------------------------------
 
