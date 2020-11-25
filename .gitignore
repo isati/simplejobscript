@@ -1,7 +1,7 @@
 #/*.~
 /src/_cache/*
-/src/_tpl/default/_cache
-/src/sjs-admin/_tpl/_cache
+/src/_tpl/default/_cache/*
+/src/sjs-admin/_tpl/_cache/*
 #/src/uploads/
 #/src/blog/
 #/src/js/tinymce
@@ -16,4 +16,3 @@
 
 .idea
 .DS_Store
-/src/_config/config.envs.php
