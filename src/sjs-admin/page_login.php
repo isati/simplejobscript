@@ -1,5 +1,5 @@
 <?php
-		
+
 		if(!empty($_POST['action']) && $_POST['action'] == 'login')
 		{
 			escape($_POST);
@@ -7,7 +7,7 @@
 
 			$_SESSION['user_ip'] = $_SERVER['REMOTE_ADDR'];
 			$_SESSION['referer'] = BASE_URL;
-			
+
 			// validation
 			if ($username == '')
 			{
@@ -17,13 +17,13 @@
 			{
 				$errors['password'] = 'Please enter your password.';
 			}
-			
+
 			// no errors, go to review page
 			if (empty($errors))
 			{
 				require_once APP_PATH . '_lib/class.Admin.php';
 				$admin = new CAdmin();
-				
+
 				if($admin->login($username, $password))
 				{
 					$_SESSION['AdminId'] = $admin->getId();

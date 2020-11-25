@@ -1,6 +1,5 @@
 <?php
 
-
 	/**
 	*  Simplejobscript Copyright (©) 2019 Niteosoft s.r.o. (ltd)
 	*
@@ -8,7 +7,7 @@
 	*  @license    MIT
 	*  @website    simplejobscript.com
 	*
-	*  There are no license limitations, modifications nor restrictions placed upon 
+	*  There are no license limitations, modifications nor restrictions placed upon
 	*  and no rights have been transfered to all third-party software parts of this product. You are granted to use these libraries
 	*  and sub-parts while following their individual license specifications and terms of service
 	*
@@ -16,10 +15,10 @@
 
 	require_once '../_config/config.php';
 	require_once '../_lib/class.Types.php';
-	
+
 	$smarty->assign('SJS_VERSION', SIMPLEJOBSCRIPT_VERSION);
 	$smarty->assign('SJS_PRODUCT', SIMPLEJOBSCRIPT_PRODUCT);
-	
+
 	$DIR_CONST = '';
 	if (defined('__DIR__'))
 		$DIR_CONST = __DIR__;
@@ -31,11 +30,11 @@
 	define('CURRENT_DIRECTORY', end($currentDirectoryNames));
 	$smarty->template_dir = APP_PATH . '/sjs-admin/_tpl';
 	$smarty->compile_dir = APP_PATH . '/sjs-admin/_tpl/_cache/';
-	
+
 	$page = (isset($_app_info['params'][0]) ? $db->getConnection()->real_escape_string($_app_info['params'][0]) : '');
 	$id = (isset($_app_info['params'][1]) ? $db->getConnection()->real_escape_string($_app_info['params'][1]) : 0);
 	$extra = (isset($_app_info['params'][2]) ? $db->getConnection()->real_escape_string($_app_info['params'][2]) : '');
-	
+
 	//////////////////////////////////////////////////////////
 
 	$js = array();
@@ -105,7 +104,7 @@
 
 	switch($page)
 	{
-		// home		
+		// home
 		case '':
 			#show login page only if the admin is not logged in
 			#else show homepage
@@ -113,10 +112,10 @@
 			{
 				$smarty->assign('BASE_URL_ORIG', BASE_URL_ORIG);
 				$smarty->assign('SITE_LOGO_PATH', SITE_LOGO_PATH);
-				require_once 'page_login.php';			
+				require_once 'page_login.php';
 			}
 			else
-			{				
+			{
 				//$id = "inactive";
 				require_once 'page_stats.php';
 			}
@@ -301,22 +300,22 @@
 
 		case 'logout':
 			if (isset($_SESSION['AdminId']))
-			{			
+			{
 				unset($_SESSION['AdminId']);
 				redirect_to(BASE_URL);
 				exit;
 			}
 			break;
-			
+
 		case 'home':
 			#show login page only if the admin is not logged in
 			#else show homepage
 			if(!isset($_SESSION['AdminId']))
 			{
-				require_once 'page_login.php';			
+				require_once 'page_login.php';
 			}
 			else
-			{				
+			{
 				//$id = "inactive";
 				require_once 'page_stats.php';
 			}
@@ -390,7 +389,7 @@
 			if(!isset($_SESSION['AdminId']))
 			{
 				redirect_to(BASE_URL);
-			}		
+			}
 			require_once 'page_job.php';
 			break;
 
@@ -491,7 +490,7 @@
 	$smarty->assign('translations', $translations);
 	// create a JSON string from the translations array, but only for the "js" section
 	$smarty->assign('translationsJson', iniSectionsToJSON(array('js' => $translations['js'])));
-	
+
 	// get job categories and cities
 	$smarty->assign('categories', get_categories());
 	$smarty->assign('settings_categories', $sjs_settings->GetSettingsCategories());
@@ -506,7 +505,7 @@
 	$smarty->assign('URL_JOBS_IN_CITY', URL_JOBS_IN_CITY);
 	$smarty->assign('URL_JOBS_AT_COMPANY', URL_JOBS_AT_COMPANY);
 	$smarty->assign('SITE_NAME', SITE_NAME);
-	
+
 	$smarty->assign('THEME', $settings['theme']);
 	$smarty->assign('CURRENT_PAGE', $page);
 	$smarty->assign('CURRENT_ID', $id);
