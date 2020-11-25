@@ -1,4 +1,5 @@
 <?php
+	require_once __DIR__ . "/../vendor/autoload.php";
 
 	/**
 	*  Simplejobscript Copyright (©) 2019 Niteosoft s.r.o. (ltd)
